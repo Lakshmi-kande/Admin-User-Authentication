@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-// Define the Admin schema
 const adminSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -15,14 +14,18 @@ const adminSchema = new mongoose.Schema({
     required: true
   },
   mobile: {
-      type: String,
-      required: true
-  }
+    type: String,
+    required: true
+  },
+  role: {
+    type: String,
+    enum: ['user', 'admin'],
+    default: 'user'
+  },
 },{
   timestamps: true,
 });
 
-// Create the Admin model
 const Admin = mongoose.model('Admin', adminSchema);
 
 module.exports = Admin;
