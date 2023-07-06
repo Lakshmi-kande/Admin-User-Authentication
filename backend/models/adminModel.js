@@ -9,7 +9,11 @@ const adminSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  password: {
+  address: {
+    type: String,
+    required: true
+  },
+  profilePic: {
     type: String,
     required: true
   },
@@ -17,12 +21,10 @@ const adminSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  role: {
+  password: {
     type: String,
-    enum: ['user', 'admin'],
-    default: 'user'
-  },
-},{
+    required: true
+  }},{
   timestamps: true,
 });
 

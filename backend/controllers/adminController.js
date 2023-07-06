@@ -6,9 +6,9 @@ const jwt = require('jsonwebtoken');
 const validateToken = require('../middleware/auth');
 
 const registerAdmin = async (req, res) => {
-  const { name, email, password, mobile, role } = req.body;
+  const { name, email, password, mobile, address, profilePic } = req.body;
 
-  if (!name || !email || !password || !mobile || !role) {
+  if (!name || !email || !password || !mobile || !address || !profilePic) {
     return res
       .status(constants.VALIDATION_ERROR)
       .json({ message: 'All fields are mandatory' });
@@ -21,14 +21,16 @@ const registerAdmin = async (req, res) => {
       .json({ message: 'You are already registered' });
   }
 
-  const salt = await bcrypt.genSalt(10);
+  const salt = await bcrypt.genSalt(process.env.BCRYPT_SALT_ROUNDS);
   const hashedPassword = await bcrypt.hash(password, salt);
 
   const newAdmin = await Admin.create({
     name,
     email,
     password: hashedPassword,
-    mobile
+    address,
+    mobile,
+    profilePic
   });
 
   res.status(constants.SUCCESSFULL_POST).json(newAdmin);
@@ -61,10 +63,8 @@ const loginAdmin = async (req, res) => {
 };
 
 const getUsers = async (req, res) => {
-  validateToken(req, res, async () => {
-    const users = await User.find();
-    res.status(constants.SUCCESSFULL_REQUEST).json(users);
-  });
+  const users = await User.find();
+  res.status(constants.SUCCESSFULL_REQUEST).json(users);
 };
 
 const deleteUser = async (req, res) => {

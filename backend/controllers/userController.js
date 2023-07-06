@@ -4,9 +4,9 @@ const { constants } = require('../constants');
 const jwt = require('jsonwebtoken');
 
 const registerUser = async (req, res) => {
-  const { name, address, profilePic, mobile, email, password } = req.body;
+  const { name, address,  mobile, email, password, profilePic } = req.body;
 
-  if (!name || !address || !profilePic || !mobile || !email || !password) {
+  if (!name || !address || !mobile || !email || !password ||!profilePic) {
     return res
       .status(constants.VALIDATION_ERROR)
       .json({ message: 'All fields are mandatory' });
@@ -25,10 +25,10 @@ const registerUser = async (req, res) => {
   const newUser = await User.create({
     name,
     address,
-    profilePic,
     mobile,
     email,
-    password: hashedPassword
+    password: hashedPassword,
+    profilePic
   });
 
   res.status(constants.SUCCESSFULL_POST).json(newUser);
