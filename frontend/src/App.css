@@ -1,0 +1,182 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
+
+/* LOGIN */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  height: 100vh;
+}
+
+.login-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  width: 25%;
+}
+
+.login-form h2 {
+  margin-bottom: 15px;
+}
+
+.login-form input {
+  margin-bottom: 10px;
+  width: 95%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+}
+
+.login-form button {
+  margin-top: 10px;
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+}
+
+.login-form p {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.login-form .sign-up-link {
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  width: 100%;
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+}
+
+
+
+
+/* SIGNUP */
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  height: 100vh;
+}
+
+.signup-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  width: 25%;
+}
+
+.signup-form h2 {
+  margin-bottom: 15px;
+}
+
+.signup-form input {
+  margin-bottom: 10px;
+  width: 95%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+}
+
+.signup-form button {
+  margin-top: 10px;
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+}
+
+.signup-form p {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.signup-form .login-link {
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  width: 100%;
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+}
+
+/* dashboard */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  font-weight: bold;
+}
+
+
+.delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.ui-avatar-image{
+  width: 50px;
+  height: 50px;
+}

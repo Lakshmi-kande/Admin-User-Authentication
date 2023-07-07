@@ -15,7 +15,7 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const endpoint = role === 'admin' ? '/api/admin/register' : '/api/user/register';
+      const endpoint = role === 'admin' ? 'http://localhost:3000/api/admin/register' : 'http://localhost:3000/api/user/register';
       const response = await axios.post(endpoint, {
         name,
         email,
