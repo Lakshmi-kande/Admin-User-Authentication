@@ -38,3 +38,6 @@ This project is a frontend application built with React.js and React Router. It 
 
 - Dashboard: After successful login, you will be redirected to the user list dashboard.
 
+## Swagger documentation
+
+`/api-docs`: view Swagger documentation for the API
