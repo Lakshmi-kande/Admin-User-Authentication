@@ -9,7 +9,13 @@ require('dotenv').config();
 
 connectDb();
 const app = express();
-app.use(cors());
+app.use(cors(
+  {
+    origin: ['https://Admin-User-Authentication.vercel.app'],
+    methods: ['POST', 'GET'],
+    credentials: true
+  }
+));
 
 const port = process.env.PORT || 3002;
 
